@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "echarts": "latest",
+    "echarts-wordcloud": "^1.1.1",
     "element-resize-detector": "latest",
     "element-resize-event": "latest",
     "lodash.debounce": "latest",

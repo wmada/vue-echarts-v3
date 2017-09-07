@@ -11,6 +11,7 @@
 
 <script>
   import ECharts from 'echarts';
+  import WordCloud from 'echarts-wordcloud';
   import Debounce from 'lodash.debounce';
   // import Resize from 'element-resize-event';
   import Resize from 'element-resize-detector';

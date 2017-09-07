@@ -121,7 +121,6 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
         },
         watch: {
             hold: function (hold) {
-                debugger
                 let that = this
                 if (!hold && !that.instance) {
                     that.init()
@@ -129,7 +128,6 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
             },
             loading: {
                 handler: function handler (loading) {
-                    debugger
                     let that = this
                     that.ifLoading(loading)
                 },
@@ -137,7 +135,6 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
             },
             option: {
                 handler: function handler (option) {
-                    debugger
                     let that = this
                     if (!that.hold && that.instance) {
                         that.instance.setOption(option, that.notMerge, that.lazyUpdate)
@@ -147,7 +144,6 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
             },
             group: {
                 handler: function handler (group) {
-                    debugger
                     let that = this
                     if (!that.hold && that.instance) {
                         that.instance.group = group
