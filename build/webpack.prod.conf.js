@@ -36,7 +36,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         // collapse_vars: true,
         // reduce_vars: true,
         // screw_ie8: false,
-        warnings: false
+        // warnings: false
       }
     }),
     // extract css into its own file
