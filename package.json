@@ -1,7 +1,7 @@
 {
-  "name": "vue-echarts-will",
-  "version": "1.0.5",
-  "description": "Vue.js(v2.x+) component wrap for ECharts.js(v3.x+)",
+  "name": "vue-echarts-w",
+  "version": "1.0.6",
+  "description": "Vue.js(v2.x+) component wrap for ECharts.js(v3.x+), Some improvement by will.",
   "keywords": [
     "echarts",
     "library",
@@ -9,9 +9,9 @@
     "vue-echarts",
     "vue-echarts-v3"
   ],
-  "homepage": "https://github.com/wmada/vue-echarts-v3",
+  "homepage": "https://github.com/wmada/vue-echarts-w",
   "bugs": {
-    "url": "https://github.com/wmada/vue-echarts-v3/issues"
+    "url": "https://github.com/wmada/vue-echarts-w/issues"
   },
   "license": "MIT",
   "author": "will",
@@ -22,14 +22,14 @@
   "main": "dist/js/full.js",
   "repository": {
     "type": "https",
-    "url": "https://github.com/wmada/vue-echarts-v3.git"
+    "url": "https://github.com/wmada/vue-echarts-w.git"
   },
   "scripts": {
     "build": "webpack -p --config build/webpack.prod.conf.js",
     "start": "webpack-dev-server --inline --hot --config build/webpack.dev.conf.js"
   },
   "dependencies": {
-    "echarts": "latest",
+    "echarts": "3.7.0",
     "echarts-wordcloud": "^1.1.1",
     "element-resize-detector": "latest",
     "element-resize-event": "latest",

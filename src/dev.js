@@ -396,7 +396,7 @@ new Vue({
             for (let i = 0, min = 5, max = 99; i < 6; i++) {
                 data.push(Math.floor(Math.random() * (max + 1 - min) + min))
             }
-            that.loading = !that.loading
+            that.loading = false
             that.bar.series[0].data = data
             that.style = {
                 width: Math.floor(Math.random() * (1024 + 1 - 400) + 400) + 'px',
@@ -404,6 +404,7 @@ new Vue({
             }
         },
         onReady (ins) {
+            this.loading = false
             console.dir(ins)
         },
         onClick (event, instance, echarts) {
