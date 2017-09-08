@@ -1,4 +1,4 @@
-# vue-echarts-v3 [![npm](https://img.shields.io/npm/v/vue-echarts-v3.svg)](https://www.npmjs.com/package/vue-echarts-v3) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/) [![echarts3](https://img.shields.io/badge/echarts-3.x-brightgreen.svg)](http://echarts.baidu.com/)
+# vue-echarts-w [![npm](https://img.shields.io/npm/v/vue-echarts-v3.svg)](https://www.npmjs.com/package/vue-echarts-w) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/) [![echarts3](https://img.shields.io/badge/echarts-3.x-brightgreen.svg)](http://echarts.baidu.com/)
 
 > [Vue.js](https://vuejs.org/) `v2.x+` component wrap for [ECharts.js](http://echarts.baidu.com/) `v3.x+`
 
@@ -13,7 +13,7 @@
 ## Installation
 
 ``` bash
-$ npm install --save vue-echarts-v3
+$ npm install --save vue-echarts-w
 ```
 
 
@@ -23,14 +23,14 @@ $ npm install --save vue-echarts-v3
 
     ``` js
     import Vue from 'vue';
-    import IEcharts from 'vue-echarts-v3/src/full.vue';
+    import IEcharts from 'vue-echarts-w/src/full.vue';
     ```
 
 2. Import ECharts.js modules manually to reduce bundle size
 
     ``` js
     import Vue from 'vue';
-    import IEcharts from 'vue-echarts-v3/src/lite.vue';
+    import IEcharts from 'vue-echarts-w/src/lite.vue';
 
     // import 'echarts/lib/chart/line';
     import 'echarts/lib/chart/bar';
@@ -87,7 +87,7 @@ $ npm install --save vue-echarts-v3
 </template>
 
 <script type="text/babel">
-  import IEcharts from 'vue-echarts-v3/src/full.vue';
+  import IEcharts from 'vue-echarts-w/src/full.vue';
   export default {
     name: 'view',
     components: {
@@ -212,7 +212,7 @@ Learn more [ECharts' API](http://echarts.baidu.com/api.html)
 ## Development
 
 ``` bash
-$ git clone https://github.com/xlsdg/vue-echarts-v3.git vue-echarts
+$ git clone https://github.com/xlsdg/vue-echarts-w.git vue-echarts
 $ cd vue-echarts && npm i && npm run start
 ```
 
