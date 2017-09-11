@@ -1,6 +1,6 @@
 'use strict'
 
-let ECHARTS_EVENTS = [
+var ECHARTS_EVENTS = [
     'click',
     'dblclick',
     'mouseover',
@@ -121,21 +121,21 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
         },
         watch: {
             hold: function (hold) {
-                let that = this
+                var that = this
                 if (!hold && !that.instance) {
                     that.init()
                 }
             },
             loading: {
                 handler: function handler (loading) {
-                    let that = this
+                    var that = this
                     that.ifLoading(loading)
                 },
                 deep: false
             },
             option: {
                 handler: function handler (option) {
-                    let that = this
+                    var that = this
                     if (!that.hold && that.instance) {
                         that.instance.setOption(option, that.notMerge, that.lazyUpdate)
                     }
@@ -144,7 +144,7 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
             },
             group: {
                 handler: function handler (group) {
-                    let that = this
+                    var that = this
                     if (!that.hold && that.instance) {
                         that.instance.group = group
                     }
@@ -154,7 +154,7 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
         },
         methods: {
             initResize: function initResize (dom) {
-                let that = this
+                var that = this
                 if (that.resizable && typeof Resize === 'function') {
                     // Resize(dom, that.resize);
                     that.insResize = that.insResize || Resize({
@@ -171,10 +171,10 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
                 }
             },
             init: function init () {
-                let that = this
+                var that = this
                 if (!that.instance) {
-                    let dom = that.$el
-                    let instance = ECharts.getInstanceByDom(dom)
+                    var dom = that.$el
+                    var instance = ECharts.getInstanceByDom(dom)
                     if (!instance) {
                         instance = ECharts.init(dom, that.theme, that.initOpts)
                     }
@@ -191,47 +191,47 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
                 }
             },
             bind: function bind () {
-                let that = this
-                let _on = function _on (name) {
+                var that = this
+                var _on = function _on (name) {
                     that.instance.on(name, function (event) {
                         that.$emit(name, event, that.instance, ECharts)
                     })
                 }
 
                 if (that._events) {
-                    for (let e in that._events) {
+                    for (var e in that._events) {
                         if (Object.prototype.hasOwnProperty.call(that._events, e)) {
-                            let name = e.toLowerCase()
+                            var name = e.toLowerCase()
                             if (ECHARTS_EVENTS.indexOf(name) > -1) {
                                 _on(name)
                             }
                         }
                     }
                 } else {
-                    for (let i = 0, len = ECHARTS_EVENTS.length; i < len; i++) {
+                    for (var i = 0, len = ECHARTS_EVENTS.length; i < len; i++) {
                         _on(ECHARTS_EVENTS[i])
                     }
                 }
             },
             unbind: function unbind () {
-                let that = this
+                var that = this
                 if (that._events) {
-                    for (let e in that._events) {
+                    for (var e in that._events) {
                         if (Object.prototype.hasOwnProperty.call(that._events, e)) {
-                            let name = e.toLowerCase()
+                            var name = e.toLowerCase()
                             if (ECHARTS_EVENTS.indexOf(name) > -1) {
                                 that.instance.off(name)
                             }
                         }
                     }
                 } else {
-                    for (let i = 0, len = ECHARTS_EVENTS.length; i < len; i++) {
+                    for (var i = 0, len = ECHARTS_EVENTS.length; i < len; i++) {
                         that.instance.off(ECHARTS_EVENTS[i])
                     }
                 }
             },
             ifLoading: function ifLoading (loading) {
-                let that = this
+                var that = this
                 if (loading) {
                     that.showLoading()
                 } else {
@@ -239,7 +239,7 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
                 }
             },
             watch: function watch () {
-                let that = this
+                var that = this
                 that.watches.loading = that.$watch('loading', function (loading) {
                     that.ifLoading(loading)
                 })
@@ -253,7 +253,7 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
                 })
             },
             unwatch: function unwatch () {
-                let that = this
+                var that = this
                 if (that.watches.loading) {
                     that.watches.loading()
                     that.watches.loading = null
@@ -268,71 +268,71 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
                 }
             },
             resize: function resize (opts) {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.resize(opts)
                 }
             },
             update: function update () {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.setOption(that.option, that.notMerge, that.lazyUpdate)
                     that.resize()
                 }
             },
             mergeOption: function mergeOption (opts) {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.setOption(opts, false, that.lazyUpdate)
                     that.resize()
                 }
             },
             dispatchAction: function dispatchAction (payload) {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.dispatchAction(payload)
                 }
             },
             convertToPixel: function convertToPixel (finder, value) {
-                let that = this
+                var that = this
                 return that.instance.convertToPixel(finder, value)
             },
             convertFromPixel: function convertFromPixel (finder, value) {
-                let that = this
+                var that = this
                 return that.instance.convertFromPixel(finder, value)
             },
             containPixel: function containPixel (finder, value) {
-                let that = this
+                var that = this
                 return that.instance.containPixel(finder, value)
             },
             showLoading: function showLoading () {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.showLoading('default', that.loadingOpts)
                 }
             },
             hideLoading: function hideLoading () {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.hideLoading()
                 }
             },
             getDataURL: function getDataURL (opts) {
-                let that = this
+                var that = this
                 return that.instance.getDataURL(opts)
             },
             getConnectedDataURL: function getConnectedDataURL (opts) {
-                let that = this
+                var that = this
                 return that.instance.getConnectedDataURL(opts)
             },
             clear: function clear () {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.instance.clear()
                 }
             },
             uninitResize: function uninitResize () {
-                let that = this
+                var that = this
                 if (that.insResize && that.insResize.uninstall) {
                     that.insResize.uninstall(that.$el)
                     that.insResize = null
@@ -343,7 +343,7 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
                 }
             },
             uninit: function uninit () {
-                let that = this
+                var that = this
                 if (that.instance) {
                     that.unbind()
                     // that.unwatch();
@@ -354,47 +354,47 @@ exports = module.exports = function wrapECharts (ECharts, Resize, Debounce) {
             }
         },
         // beforeCreate: function beforeCreate() {
-        // let that = this;
+        // var that = this;
         // console.log('beforeCreate');
         // },
         // created: function created() {
-        // let that = this;
+        // var that = this;
         // console.log('created');
         // },
         // beforeMount: function beforeMount() {
-        // let that = this;
+        // var that = this;
         // console.log('beforeMount');
         // },
         mounted: function mounted () {
-            let that = this
+            var that = this
             // console.log('mounted');
             if (!that.hold) {
                 that.init()
             }
         },
         // beforeUpdate: function beforeUpdate() {
-        // let that = this;
+        // var that = this;
         // console.log('beforeUpdate');
         // },
         // updated: function updated() {
-        // let that = this;
+        // var that = this;
         // console.log('updated');
         // },
         // activated: function activated() {
-        // let that = this;
+        // var that = this;
         // console.log('activated');
         // },
         // deactivated: function deactivated() {
-        // let that = this;
+        // var that = this;
         // console.log('deactivated');
         // },
         beforeDestroy: function beforeDestroy () {
-            let that = this
+            var that = this
             // console.log('beforeDestroy');
             that.uninit()
         },
         // destroyed: function destroyed() {
-        // let that = this;
+        // var that = this;
         // console.log('destroyed');
         // },
         connect: function connect (group) {

@@ -392,8 +392,8 @@ new Vue({
     methods: {
         doLoading () {
             const that = this
-            let data = []
-            for (let i = 0, min = 5, max = 99; i < 6; i++) {
+            var data = []
+            for (var i = 0, min = 5, max = 99; i < 6; i++) {
                 data.push(Math.floor(Math.random() * (max + 1 - min) + min))
             }
             that.loading = false
